@@ -79,7 +79,7 @@ To achieve a Välgodkänt grade:
 
 
     Allow a User to 'log out'
-    A new User should be able to log in in the same session
+    A new User should be able to log in in the same session 
 
 
     Well structured and organized files

@@ -12,7 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        "princess-sofia": "var(--font-princess-sofia)",
+        "fontdiner-swanky": "var(--font-fontdiner-swanky)",
+        "outfit": "var(--font-outfit)"
+      },
     },
   },
   plugins: [],
 } satisfies Config;
+
+

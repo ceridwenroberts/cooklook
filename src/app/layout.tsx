@@ -1,22 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Princess_Sofia, Outfit } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "@/utils/contexts";
-import Header from "@/components/Header";
 import LoginWrapper from "@/components/LoginWrapper";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const princessSofia = Princess_Sofia({
+  variable: "--font-princess-sofia",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
-  title: "Mealreel",
+  title: "CookLook",
   description: "React Context Assignment",
 };
 
@@ -26,14 +28,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en h-100 ">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-screen flex flex-col
+          bg-[url(/checkered-pattern.jpg)] bg-center bg-repeat ${outfit.variable} antialiased ${princessSofia.variable}`}
       >
-        <Header />
         <UserProvider>
-          <LoginWrapper children={children} />
+          <LoginWrapper>{children}</LoginWrapper>
         </UserProvider>
+        <Footer />
       </body>
     </html>
   );
