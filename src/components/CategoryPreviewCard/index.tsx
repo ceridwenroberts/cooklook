@@ -15,7 +15,7 @@ const CategoryPreviewCard = ({ category }: PreviewCardProps) => {
         className="relative flex justify-around bg-[url(/doily-square-vec.svg)] bg-contain bg-no-repeat p-4 px-2 md:px-4 w-1/3 sm:w-1/4 md:w-1/4 lg:w-1/6 aspect-square shrink-0 align-center"
       >
         <Link href={`/category/${category.strCategory}`} className="flex">
-          <div className="flex flex-col justify-center w-full">∏
+          <div className="flex flex-col justify-center w-full">
             <div
               className="justify-self-end self-end m-0"
               onClick={(e) => e.preventDefault()}
