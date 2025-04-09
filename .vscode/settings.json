@@ -1,0 +1,6 @@
+{
+	"javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+	"javascript.inlayHints.parameterTypes.enabled": true,
+	"javascript.inlayHints.variableTypes.enabled": true,
+	"css.validate": false //remove unknown css at-rules warning on @tailwind global.css
+}

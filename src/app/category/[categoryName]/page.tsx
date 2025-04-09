@@ -31,10 +31,10 @@ const CategoryPage = ({
 
 	return (
 		<div className='self-center'>
-			<h1 className='py-14 font-princess-sofia text-sky-900 text-8xl text-center'>
+			<h1 className='py-14 font-princess-sofia text-sky-900 text-6xl md:text-8xl text-center'>
 				{categoryName}
 			</h1>
-			<div className='flex flex-wrap m-auto sm:mx-4 md:-mb-7 max-w-7xl align-center'>
+			<div className='flex flex-wrap justify-center m-auto sm:mx-4 md:-mb-7 max-w-7xl align-center'>
 				{recipes &&
 					recipes.map((recipe) => (
 						<RecipePreviewCard
