@@ -55,7 +55,6 @@ const Menu = () => {
 		}
 	}, [open])
 
-
 	return (
 		<>
 			<div className='bg-white outline outline-white font-outfit-b text-sky-700'>
