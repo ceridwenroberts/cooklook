@@ -17,11 +17,6 @@ const princessSofia = Princess_Sofia({
   weight: "400",
 });
 
-export const metadata: Metadata = {
-  title: "CookLook",
-  description: "React Context Assignment",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
