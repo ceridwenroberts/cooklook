@@ -6,8 +6,10 @@ type PreviewCardProps = {
 import { CategoryType } from '@/utils/types'
 import Link from 'next/link'
 import StarToggle from '../StarToggle'
+import { useState } from 'react'
 
 const CategoryPreviewCard = ({ category }: PreviewCardProps) => {
+	const [showPopup, setShowPopup] = useState<boolean>(false)
 	return (
 		<>
 			<div
@@ -32,7 +34,7 @@ const CategoryPreviewCard = ({ category }: PreviewCardProps) => {
 							<button
 								onClick={(e) => {
 									e.preventDefault()
-									alert(category.strCategoryDescription)
+									setShowPopup(true)
 								}}
 								className='flex justify-center items-center border border-pink-500 rounded-full w-4 sm:w-6 h-4 sm:h-6 font-princess-sofia text-pink-500 text-xs sm:text-base leading-[0]'
 							>
@@ -42,6 +44,28 @@ const CategoryPreviewCard = ({ category }: PreviewCardProps) => {
 					</div>
 				</Link>
 			</div>
+			{showPopup && (
+				<div
+					className='z-50 fixed inset-0 flex justify-center items-center bg-black bg-opacity-50'
+					onClick={() => setShowPopup(false)}
+				>
+					<div
+						className='relative bg-white shadow-xl mx-4 p-4 rounded-xl max-w-sm text-sm sm:text-base'
+						onClick={(e) => e.stopPropagation()}
+					>
+						<button
+							className='top-1 right-2 absolute text-gray-500 hover:text-pink-500 text-xl'
+							onClick={() => setShowPopup(false)}
+						>
+							×
+						</button>
+						<p className='py-3 font-princess-sofia text-xl sm:text-2xl text-center'>
+							{category.strCategory}
+						</p>
+						<p>{category.strCategoryDescription}</p>
+					</div>
+				</div>
+			)}
 		</>
 	)
 }
