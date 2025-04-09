@@ -12,7 +12,6 @@ const RecipiePage = ({ params }: { params: Promise<{ id: string }> }) => {
   const [recipe, setRecipe] = useState<RecipeType | null>(null);
   const { id } = use(params);
   const [showInstr, setShowInstr] = useState<boolean>(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showIngr, setShowIngr] = useState<boolean>(false);
 
   useEffect(() => {
@@ -85,8 +84,6 @@ const RecipiePage = ({ params }: { params: Promise<{ id: string }> }) => {
                   item={{
                     idCategory: `${recipe.strCategory}`,
                     strCategory: `${recipe.strCategory}`,
-                    strCategoryThumb: undefined,
-                    strCategoryDescription: undefined,
                   }}
                 />
               </div>
