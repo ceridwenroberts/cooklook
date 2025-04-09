@@ -26,7 +26,6 @@ const HeartToggle = ({ item, className }: HeartToggleProps) => {
 	}
 
 	useEffect(() => {
-		console.log('change in fav recipes', favRecipes)
 	}, [favRecipes])
 
 	return (
