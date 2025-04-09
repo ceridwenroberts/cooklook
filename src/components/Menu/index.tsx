@@ -55,11 +55,6 @@ const Menu = () => {
 		}
 	}, [open])
 
-	const handleSignOut = () => {
-		if (confirm('Are you sure you want to log out?')) {
-			setUser(null)
-		}
-	}
 
 	return (
 		<>
@@ -128,7 +123,11 @@ const Menu = () => {
 					</div>
 					<Link
 						href='/'
-						onClick={handleSignOut}
+						onClick={() => {
+							if (confirm('Are you sure you want to log out?')) {
+								setUser(null)
+							}
+						}}
 						className='pl-3 border-sky-400 border-l text-basis text-sky-700 hover:text-pink-400'
 					>
 						Sign Out
