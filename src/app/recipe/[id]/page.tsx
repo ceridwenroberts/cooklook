@@ -11,7 +11,11 @@ const RecipiePage = ({ params }: { params: Promise<{ id: string }> }) => {
 	const [recipe, setRecipe] = useState<RecipeType | null>(null)
 	const { id } = use(params)
 	const [showInstr, setShowInstr] = useState<boolean>(false)
-	const [showIngr, setShowIngr] = useState<boolean>(false)
+	const instructions: string[] = recipe?.strInstructions?.split('\r\n') || []
+	const ingredientsList: {
+		ingredient: string | null
+		measure: string | null
+	}[] = []
 
 	useEffect(() => {
 		const fetchRecipe = async (id: string) => {
@@ -33,15 +37,8 @@ const RecipiePage = ({ params }: { params: Promise<{ id: string }> }) => {
 		} else {
 			console.log('No ID found')
 		}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-
-	const instructions: string[] = recipe?.strInstructions?.split('\r\n') || []
-	console.log('recipe', recipe)
-
-	const ingredientsList: {
-		ingredient: string | null
-		measure: string | null
-	}[] = []
 
 	if (recipe)
 		for (let i = 1; i <= 20; i++) {
@@ -114,10 +111,7 @@ const RecipiePage = ({ params }: { params: Promise<{ id: string }> }) => {
 							</ol>
 						</div>
 						<div className='col-span-12 sm:col-span-5 bg-white box-shadow-lg px-5 pt-6 pb-7 border border-b-[7px] border-black rounded-lg'>
-							<button
-								onClick={() => setShowIngr((prev) => !prev)}
-								className='font-princess-sofia text-sky-900 text-2xl'
-							>
+							<button className='font-princess-sofia text-sky-900 text-2xl'>
 								Ingredients
 							</button>
 							{

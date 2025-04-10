@@ -1,6 +1,5 @@
 import { useFavoritesContext } from '@/utils/contexts'
 import { RecipeType, FavoritesContextType } from '@/utils/types'
-import { useEffect } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type HeartToggleProps = {

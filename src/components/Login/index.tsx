@@ -26,7 +26,6 @@ const Login = () => {
 			(user: UserType) => user.name === userInput
 		)
 		if (loggedInUser.length) {
-			console.log(loggedInUser[0])
 			setUser(loggedInUser[0])
 		}
 	}

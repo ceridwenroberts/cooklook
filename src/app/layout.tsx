@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Princess_Sofia, Outfit } from "next/font/google";
 import "./globals.css";
 import { UserProvider } from "@/utils/contexts";

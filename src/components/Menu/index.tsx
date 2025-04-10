@@ -16,6 +16,7 @@ const Menu = () => {
 	const params = useParams()
 	const categoryName = params.categoryName
 	const menuRef = useRef<HTMLDivElement>(null)
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const [navLink, setNavLink] = useState<boolean>(false)
 
 	const currentQuery = (href: string) => (pathname === href ? 'font-bold' : '')
@@ -36,6 +37,7 @@ const Menu = () => {
 		}
 
 		fetchCategories()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	useEffect(() => {

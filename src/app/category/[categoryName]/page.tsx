@@ -9,7 +9,6 @@ const CategoryPage = ({
 }: {
 	params: Promise<{ categoryName: string }>
 }) => {
-	console.log('params', params)
 	const { categoryName } = use(params)
 	const [recipes, setRecipes] = useState<RecipeType[] | null>(null)
 
@@ -27,6 +26,7 @@ const CategoryPage = ({
 			}
 		}
 		fetchByCategory()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (

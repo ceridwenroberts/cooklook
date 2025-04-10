@@ -16,9 +16,9 @@ const DynamicTitle = () => {
 	) {
 		metaDescription.setAttribute(
 			'content',
-			user 
-            ? `Great look! You cook, ${user.name}!`
-			: 'A great look for any cook – Log in!'
+			user ?
+				`Great look! You cook, ${user.name}!`
+			:	'A great look for any cook – Log in!'
 		)
 	}
 
@@ -35,7 +35,7 @@ const DynamicTitle = () => {
 		}
 
 		setDescription(metaDescription, user)
-        console.log("inital meta:", metaDescription )
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	useEffect(() => {

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import GitHubIcon from '../icons/GitHubIcon'
 
 const Footer = () => {
